@@ -13,6 +13,7 @@
         <div class="firstContainer">
             <h1 id="titolo">I MIEI FILM</h1>
             <p id="sottoTitolo">Una raccolta di film visti e da vedere</p>
+            <button id="cambiaTema">🌙 Tema scuro</button>
         </div>
     </header>
 
@@ -40,45 +41,47 @@
             <button type="button" id="buttonReset"> Resetta filtri</button>
         </div>
 
-        <div class="search">
-            <label for="aggiungi" class="titoloContainer"> Aggiungi qui il tuo film</label>
+        <form class="search" id="form">
+            <label for="nomeFilm" class="titoloContainer"> Aggiungi qui il tuo film</label>
             <div class="barraRicercaAggiungi">
-                <input type="search" placeholder="Nome film...">
+                <input type="text" id="nomeFilm" placeholder="Nome film...">
             </div>
             <div class="registaFilm">
-                <input type="search" placeholder="Regista...">
+                <input type="text" id="registaFilm" placeholder="Regista...">
             </div>
             <div class="annoFilm">
-                <input type="search" placeholder="Anno">
+                <input type="number" id="annoFilm" placeholder="Anno">
             </div>
 
-            <button type="button"> Aggiungi</button>
+            <button type="submit" id="buttonAggiungi"> Aggiungi</button>
 
-        </div>
+        </form>
     </div>
     <div class="container">
         <div class="statisticheFilm">
             <div class="statistica">
-                <span class="numero">5</span>
+                <span class="numero" id="totaleFilm">0</span>
                 <span class="descrizione">Totale</span>
             </div>
 
             <div class="statistica">
-                <span class="numero">3</span>
+                <span class="numero" id="filmVisti">0</span>
                 <span class="descrizione">visti</span>
             </div>
 
             <div class="statistica">
-                <span class="numeroNonVisti">2</span>
+                <span class="numeroNonVisti" id="filmDaVedere">0</span>
                 <span class="descrizione">Da vedere</span>
             </div>
         </div>
 
         <div class="progressoFilm">
             <div class="barraProgresso">
-                <div class="percentuale"></div>
+                <div class="percentuale" id="barraPercentuale"></div>
             </div>
-            <span class="descrizione">Percentuale visti</span>
+            <span class="descrizione">
+                Percentuale visti: <span id="testoPercentuale">0%</span>
+            </span>
         </div>
     </div>
     <div class="container" id="listaFilm">
@@ -86,9 +89,6 @@
 
         </div> -->
     </div>
-
-
-
 
     <script src="/assets/script.js"></script>
 </body>

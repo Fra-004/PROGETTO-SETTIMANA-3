@@ -1,13 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #172554;
     width: 75%;
     margin: 0 auto;
 }
-
-* {
-    margin: 0;
-    padding: 0;
+/* TEMA SCURO */
+body.temaScuro {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
+
+body.temaScuro .container,
+body.temaScuro .cardFilm,
+body.temaScuro .statisticheFilm,
+body.temaScuro .progressoFilm,
+body.temaScuro .firstContainer,
+body.temaScuro .search {
+    background-color: #2b2b2b;
+    color: white;
+}
+
+/* Titoli e testi */
+body.temaScuro #titolo,
+body.temaScuro #sottoTitolo,
+body.temaScuro .titoloContainer,
+body.temaScuro .descrizione,
+body.temaScuro .informazioniFilm h2,
+body.temaScuro .informazioniFilm p {
+    color: white;
+}
+
+/* Statistiche */
+body.temaScuro .numero,
+body.temaScuro .numeroNonVisti {
+    color: #93c5fd;
+}
+
+/* Campi di testo e menu */
+body.temaScuro input,
+body.temaScuro select {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+}
+
+/* Pulsanti */
+body.temaScuro button {
+    background-color: #374151;
+    color: white;
+}
+body.temaScuro #buttonReset {
+    background-color: #60a5fa;
+}
+body.temaScuro  #buttonAggiungi{
+    background-color: #60a5fa;
+}
+
+body.temaScuro button:hover {
+    background-color: #4b5563;
+}
+
+body.temaScuro #buttonReset:hover {
+    background-color: #4b5563;
+}
+body.temaScuro  #buttonAggiungi:hover{
+    background-color: #4b5563;
+}
+body.temaScuro #cambiaTema:hover {
+    background-color: #4b5563;
+}
+
+/* Schede dei film */
+body.temaScuro .cardFilm {
+    border-color: #555555;
+}
+
+/* Barra di progresso */
+body.temaScuro .barraProgresso {
+    background-color: #444444;
+}
+
+body.temaScuro .percentuale {
+    background-color: #60a5fa;
+}
+#cambiaTema {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+    font-size: 15px;
+    padding: 5px;
+    
+}
+
+
 
 
 #titolo {
@@ -139,18 +228,37 @@ body {
     padding-left: 15px;
 }
 
-button {
+#buttonReset {
     height: 38px;
     width: 80%;
     margin-left: 15px;
     background-color: #172554;
     color: white;
-    border: none;
     border-radius: 8px;
     font-size: 15px;
     cursor: pointer;
 }
+#buttonAggiungi {
+    height: 38px;
+    width: 80%;
+    margin-left: 15px;
+    background-color: #172554;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#buttonReset:hover {
+    background-color: #2563EB;
+}
+#buttonAggiungi:hover{
+    background-color: #2563EB;
+}
 
+button{
+    background-color: #172554;
+    color: white;
+}
 button:hover {
     background-color: #2563EB;
 }

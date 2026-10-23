@@ -1,5 +1,5 @@
 
-const film = [
+let film = JSON.parse(localStorage.getItem("film")) || [
     {
         Film: 'odissea',
         regista: 'Christopher Nolan',
@@ -38,7 +38,14 @@ const film = [
 ]
 
 const listaFilm = document.querySelector("#listaFilm");
+const totaleFilm = document.querySelector("#totaleFilm");
+const filmVisti = document.querySelector("#filmVisti");
+const filmDaVedere = document.querySelector("#filmDaVedere");
+const barraPercentuale = document.querySelector("#barraPercentuale");
+const testoPercentuale = document.querySelector("#testoPercentuale");
+
 function visualizzazioneFilm() {
+    listaFilm.replaceChildren();
     for (let i = 0; i < film.length; i++) {
 
         const card = document.createElement("div");
@@ -69,7 +76,25 @@ function visualizzazioneFilm() {
         }
 
         const bottoneElimina = document.createElement("button");
-        bottoneElimina.textContent = "Elimina";
+        bottoneElimina.textContent = "Elimina"; 
+
+        // Modifica lo stato del film
+        stato.addEventListener("click", function () {
+            film[i].visto = !film[i].visto;
+
+            visualizzazioneFilm();
+            Statistiche();
+            salvaFilm();
+        });
+
+        // Elimina il film
+        bottoneElimina.addEventListener("click", function () {
+            film.splice(i, 1);
+
+            visualizzazioneFilm();
+            Statistiche();
+            salvaFilm();
+        });
 
         pulsanti.append(stato);
         pulsanti.append(bottoneElimina);
@@ -82,6 +107,7 @@ function visualizzazioneFilm() {
 }
 
 visualizzazioneFilm();
+Statistiche();
 // Ricerca dei film
 const ricercaFilm = document.querySelector("#ricercaFilm");
 const bottoneReset = document.querySelector("#buttonReset");
@@ -104,7 +130,7 @@ function cercaFilm() {
 }
 
 // Reset della ricerca
-bottoneReset.addEventListener("click", function() {
+bottoneReset.addEventListener("click", function () {
     ricercaFilm.value = "";
 
     const schedeFilm = document.querySelectorAll(".cardFilm");
@@ -170,4 +196,90 @@ function ordinaFilm() {
             }
         }
     }
+}
+
+const nomeFilm = document.querySelector("#nomeFilm");
+const registaFilm = document.querySelector("#registaFilm");
+const annoFilm = document.querySelector("#annoFilm");
+const form = document.querySelector("#form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (nomeFilm.value.trim() === "") {
+        alert("Inserisci il nome del film!");
+
+    } else if (registaFilm.value.trim() === "") {
+        alert("Inserisci il nome del regista!");
+
+    } else if (annoFilm.value.trim() === "") {
+        alert("Inserisci l'anno del film!");
+
+    } else if (Number(annoFilm.value) <= 0) {
+        alert("Inserisci un anno valido!");
+
+    } else {
+        const nuovoFilm = {
+            Film: nomeFilm.value.trim(),
+            regista: registaFilm.value.trim(),
+            anno: annoFilm.value,
+            genere: "",
+            visto: false
+        };
+
+        film.push(nuovoFilm);
+
+        salvaFilm();
+        visualizzazioneFilm();
+        Statistiche();
+
+        // Svuoto i campi
+        nomeFilm.value = "";
+        registaFilm.value = "";
+        annoFilm.value = "";
+    }
+});
+
+
+function Statistiche() {
+    const totale = film.length;
+    let visti = 0;
+
+    for (let i = 0; i < film.length; i++) {
+        if (film[i].visto === true) {
+            visti++;
+        }
+    }
+
+    const daVedere = totale - visti;
+    let percentuale = 0;
+
+    if (totale > 0) {
+        percentuale = Math.round((visti / totale) * 100);
+    }
+
+    totaleFilm.textContent = totale;
+    filmVisti.textContent = visti;
+    filmDaVedere.textContent = daVedere;
+
+    barraPercentuale.style.width = percentuale + "%";
+    testoPercentuale.textContent = percentuale + "%";
+}
+
+const tema = document.querySelector("#cambiaTema");
+
+tema.addEventListener("click", function() {
+
+    document.body.classList.toggle("temaScuro");
+
+    if (document.body.classList.contains("temaScuro")) {
+       tema.textContent = "☀️ Tema chiaro";
+    } else {
+        tema.textContent = "🌙 Tema scuro";
+    }
+
+});
+
+function salvaFilm() {
+    localStorage.setItem("film", JSON.stringify(film));
 }
