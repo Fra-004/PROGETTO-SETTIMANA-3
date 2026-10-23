@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="firstContainer">
+            <h1 id="titolo">I MIEI FILM</h1>
+            <p id="sottoTitolo">Una raccolta di film visti e da vedere</p>
+        </div>
+    </header>
+
+    <div>
+        <div class="search">
+            <!-- <h2 class="titoloContainer">Cerca qui il tuo film</h2> -->
+            <label for="ricerca" class="titoloContainer"> Cerca qui il tuo film</label>
+            <div class="barraRicerca">
+                <input type="search" id="ricercaFilm" placeholder="Nome film...">
+                <!-- <button type="button">Cerca</button> -->
+            </div>
+            <div class="filtroFilm">
+                <select id="statoFilm">
+                    <option value="tutti">Tutti </option>
+                    <option value="visti">Visti</option>
+                    <option value="non-visti">Non visti</option>
+                </select>
+            </div>
+            <div class="filtroAnno">
+                <select id="anno">
+                    <option value="AnnoCrescente">Anno crescente</option>
+                    <option value="AnnoDecrescente">Anno decrescente</option>
+                </select>
+            </div>
+            <button type="button" id="buttonReset"> Resetta filtri</button>
+        </div>
+
+        <div class="search">
+            <label for="aggiungi" class="titoloContainer"> Aggiungi qui il tuo film</label>
+            <div class="barraRicercaAggiungi">
+                <input type="search" placeholder="Nome film...">
+            </div>
+            <div class="registaFilm">
+                <input type="search" placeholder="Regista...">
+            </div>
+            <div class="annoFilm">
+                <input type="search" placeholder="Anno">
+            </div>
+
+            <button type="button"> Aggiungi</button>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="statisticheFilm">
+            <div class="statistica">
+                <span class="numero">5</span>
+                <span class="descrizione">Totale</span>
+            </div>
+
+            <div class="statistica">
+                <span class="numero">3</span>
+                <span class="descrizione">visti</span>
+            </div>
+
+            <div class="statistica">
+                <span class="numeroNonVisti">2</span>
+                <span class="descrizione">Da vedere</span>
+            </div>
+        </div>
+
+        <div class="progressoFilm">
+            <div class="barraProgresso">
+                <div class="percentuale"></div>
+            </div>
+            <span class="descrizione">Percentuale visti</span>
+        </div>
+    </div>
+    <div class="container" id="listaFilm">
+        <!-- <div id="listaFilm">
+
+        </div> -->
+    </div>
+
+
+
+
+    <script src="/assets/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+body {
+    background-color: #172554;
+    width: 75%;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#titolo {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#sottoTitolo {
+    text-align: center;
+    font-family: cursive, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.firstContainer {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #F8FAFC;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.titoloContainer {
+    padding-left: 15px;
+    display: block;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.barraRicerca {
+    /* display: inline-block; */
+    width: 100%;
+    vertical-align: top;
+    font-size: 0%;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.barraRicerca input {
+    width: 80%;
+    margin-left: 0;
+    height: 30px;
+    padding-left: 15px;
+}
+
+.filtroFilm {
+    width: 80%;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    /* display: inline-block; */
+}
+
+#statoFilm {
+    height: 30px;
+    width: 100%;
+    padding-left: 15px;
+}
+
+.filtroAnno {
+    width: 80%;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+#anno {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+}
+
+.search {
+    height: 230px;
+    width: 49%;
+    margin: 30px auto;
+    background-color: #F8FAFC;
+    border-radius: 20px;
+    padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.search:first-child {
+    margin-right: 1%;
+}
+
+.barraRicercaAggiungi {
+    vertical-align: top;
+    font-size: 0%;
+    padding-left: 15px;
+    width: 80%;
+}
+
+.barraRicercaAggiungi input {
+    width: 100%;
+    padding-left: 15px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.registaFilm {
+    width: 80%;
+    height: 30px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+}
+
+.registaFilm input {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+
+}
+
+.annoFilm {
+    width: 80%;
+    height: 30px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+
+.annoFilm input {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+}
+
+button {
+    height: 38px;
+    width: 80%;
+    margin-left: 15px;
+    background-color: #172554;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2563EB;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #F8FAFC;
+    border-radius: 20px;
+    font-size: 0;
+}
+
+.statisticheFilm {
+    display: inline-block;
+    width: 25%;
+    vertical-align: middle;
+}
+
+.statistica {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+}
+
+.numero {
+    color: #172554;
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
+.numeroNonVisti {
+    color: skyblue;
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.descrizione {
+    color: #172554;
+    display: block;
+    font-size: 12px;
+}
+
+.progressoFilm {
+    display: inline-block;
+    width: 75%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.barraProgresso {
+    width: 100%;
+    height: 14px;
+    background-color: skyblue;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.percentuale {
+    width: 60%;
+    height: 100%;
+    background-color: #172554;
+}
+
+
+#listaFilm {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 30px auto;
+    font-size: 16px;
+}
+
+.cardFilm {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    font-size: 0;
+}
+
+.informazioniFilm {
+    display: inline-block;
+    width: 45%;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.informazioniFilm h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.informazioniFilm p {
+    font-size: 14px;
+}
+
+.pulsantiFilm {
+    display: inline-block;
+    width: 55%;
+    text-align: right;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.pulsantiFilm 
+.statoFilm,
+.pulsantiFilm 
+button {
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    box-sizing: border-box;
+    margin: 0 0 0 8px;
+    padding: 5px;
+    font-size: 12px;
+    vertical-align: middle;
+}
