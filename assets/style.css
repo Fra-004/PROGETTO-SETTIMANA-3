@@ -13,7 +13,7 @@ body.temaScuro {
     background-color: #1e1e1e;
     color: #ffffff;
 }
-
+/* Container */
 body.temaScuro .container,
 body.temaScuro .cardFilm,
 body.temaScuro .statisticheFilm,
@@ -95,8 +95,10 @@ body.temaScuro .percentuale {
     padding: 5px;
     
 }
-
-
+/* Footer */
+body.temaScuro #footer{
+    background-color: #2b2b2b;
+}
 
 
 #titolo {
