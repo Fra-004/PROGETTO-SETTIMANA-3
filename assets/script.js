@@ -76,7 +76,39 @@ function visualizzazioneFilm() {
         }
 
         const bottoneElimina = document.createElement("button");
-        bottoneElimina.textContent = "Elimina"; 
+        bottoneElimina.textContent = "Elimina";
+
+        const bottoneModifica = document.createElement("button");
+        bottoneModifica.textContent = "Modifica";
+        bottoneModifica.addEventListener("click", function () {
+
+            const nuovoTitolo = prompt("Inserisci il nuovo titolo:", film[i].Film);
+
+            if (nuovoTitolo === null || nuovoTitolo.trim() === "") {
+                return;
+            }
+
+            const nuovoRegista = prompt("Inserisci il nuovo regista:", film[i].regista);
+
+            if (nuovoRegista === null || nuovoRegista.trim() === "") {
+                return;
+            }
+
+            const nuovoAnno = prompt("Inserisci il nuovo anno:", film[i].anno);
+
+            if (nuovoAnno === null || nuovoAnno.trim() === "" || Number(nuovoAnno) <= 0) {
+                alert("Inserisci un anno valido!");
+                return;
+            }
+
+            film[i].Film = nuovoTitolo.trim();
+            film[i].regista = nuovoRegista.trim();
+            film[i].anno = nuovoAnno;
+
+            salvaFilm();
+            visualizzazioneFilm();
+            Statistiche();
+        });
 
         // Modifica lo stato del film
         stato.addEventListener("click", function () {
@@ -97,6 +129,7 @@ function visualizzazioneFilm() {
         });
 
         pulsanti.append(stato);
+        pulsanti.append(bottoneModifica);
         pulsanti.append(bottoneElimina);
 
         card.append(informazioni);
@@ -203,7 +236,7 @@ const registaFilm = document.querySelector("#registaFilm");
 const annoFilm = document.querySelector("#annoFilm");
 const form = document.querySelector("#form");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     if (nomeFilm.value.trim() === "") {
@@ -268,12 +301,12 @@ function Statistiche() {
 
 const tema = document.querySelector("#cambiaTema");
 
-tema.addEventListener("click", function() {
+tema.addEventListener("click", function () {
 
     document.body.classList.toggle("temaScuro");
 
     if (document.body.classList.contains("temaScuro")) {
-       tema.textContent = "☀️ Tema chiaro";
+        tema.textContent = "☀️ Tema chiaro";
     } else {
         tema.textContent = "🌙 Tema scuro";
     }
